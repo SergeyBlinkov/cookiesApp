@@ -84,6 +84,7 @@ function Index() {
         if(storage.values === 4) values = 99
         if(storage.values === 5) values = 999
        localStorage.setItem("infoUser",`{"type":"${storage.type}","amount":${storage.amount},"values":${values}}`)
+
     }
     return (
         <div className={styles.container}>

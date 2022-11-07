@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {allScenes} from "./DataAssets";
 type Cookies = {
     number: number,
@@ -9,10 +9,18 @@ type Info = {
     amount: number,
     values: number
 }
+const init:Info = {
+    type: '',
+    amount: 2,
+    values: 0
+}
 const currentScene = allScenes[0]
 const NewArray = () => {
-    const info: Info | undefined = JSON.parse(localStorage.getItem('infoUser'))
-
+    const [info,setInfo] = useState(init)
+    useEffect(() => {
+        const localStorage = window.localStorage
+        setInfo(JSON.parse(localStorage.getItem('infoUser')))
+    },[])
     let cookies: Cookies[] = []
     for (let i = 0; i < +info.amount; i++) {
         let number = 1 + +Math.floor(Math.random() * +(info.values - 1))

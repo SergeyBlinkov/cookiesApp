@@ -7,7 +7,6 @@ import FinishComponent from "../Components/FinishComponent";
 import NewArray from "../Components/NewArray";
 import direction from '../public/direction.svg';
 
-
 type Cookies = {
     number: number,
     picture: string
@@ -17,6 +16,8 @@ type XYPos = {
     xPos: number,
     yPos: number
 }
+
+
 
 function Game() {
     const {info,cookies,currentScene} = NewArray()
@@ -170,7 +171,7 @@ function Game() {
                         </div>}
                     </div>
                     <div className={styles.emptyBlockWrapper}>
-                        <img src={currentScene.emptySlots}/>
+                        <img src={currentScene.emptySlots} alt={'emptySlots'}/>
                         <div className={styles.emptyBlock} ref={emptyBlock}>
                             {Array.from(Array(info.amount)).map((_, index) => {
                                 return (
