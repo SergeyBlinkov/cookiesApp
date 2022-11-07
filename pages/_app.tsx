@@ -1,4 +1,4 @@
-import style from '../style.module.scss';
+import style from '../style.module.css';
 import '../zeroStyle.css';
 
 // This default export is required in a new `pages/_app.js` file.
